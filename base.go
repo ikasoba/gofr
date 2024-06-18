@@ -31,7 +31,7 @@ func SiteHeader() js.Value {
 			},
 		},
 			gofr.H("a", map[string]any{
-				"href": "/",
+				"href": "/gofr/",
 			}, "トップ"),
 			gofr.H("a", map[string]any{
 				"href": "https://github.com/ikasoba/gofr",
