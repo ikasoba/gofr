@@ -50,7 +50,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: |
+          path:
             index.html
             main.wasm
             wasm_exec.js
