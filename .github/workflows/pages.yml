@@ -40,8 +40,8 @@ jobs:
       - name: Copy misc/wasm/wasm_exec.js
         run: |
           wget https://raw.githubusercontent.com/golang/go/release-branch.go1.21/misc/wasm/wasm_exec.js 
-          mkdir -p "$(go env GOROOT)/misc/wasm"
-          mv wasm_exec.js "$(go env GOROOT)/misc/wasm/"
+          sudo mkdir -p "$(go env GOROOT)/misc/wasm"
+          sudo mv wasm_exec.js "$(go env GOROOT)/misc/wasm/"
       - name: Install Dependencies
         run: go get
       - name: Setup tmate session
