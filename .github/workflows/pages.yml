@@ -39,8 +39,10 @@ jobs:
           go-version: 1.21.x
       - name: Install Dependencies
         run: go get
-      - name: Build
-        run: make
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+      #- name: Build
+      #  run: make
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
