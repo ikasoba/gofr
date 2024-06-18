@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./base.css" />
+  <script type="module">
+    import "./wasm_exec.js";
+
+    const go = new Go();
+    globalThis.go = go;
+
+    const { instance } = await WebAssembly.instantiateStreaming(fetch("./main.wasm"), go.importObject);
+
+    await go.run(instance);
+  </script>
+</head>
+<body>
+</body>
+</html>
