@@ -37,12 +37,17 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: 1.21.x
+      - name: Copy misc/wasm/wasm_exec.js
+        run: |
+          wget https://raw.githubusercontent.com/golang/go/release-branch.go1.21/misc/wasm/wasm_exec.js 
+          mkdir -p "$(go env GOROOT)/misc/wasm"
+          mv wasm_exec.js "$(go env GOROOT)/misc/wasm/"
       - name: Install Dependencies
         run: go get
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
-      #- name: Build
-      #  run: make
+      - name: Build
+        run: make
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
