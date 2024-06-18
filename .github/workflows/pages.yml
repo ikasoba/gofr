@@ -44,8 +44,6 @@ jobs:
           sudo mv wasm_exec.js "$(go env GOROOT)/misc/wasm/"
       - name: Install Dependencies
         run: go get
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
       - name: Build
         run: make
       - name: Upload artifact
